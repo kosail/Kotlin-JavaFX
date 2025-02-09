@@ -20,7 +20,9 @@ Almost done! You are now able to run the `Main.kt` file which is a simple `Ancho
 
 
 ## Common questions
+
 (At least questions that I made to myself while suffering to configure all this without knowing anything)
+
 ---
 ### Why do I need that `module-info.java` file?
 The `module` keyword you find within this file, was introduced in Java 9 as part of the Java Module System (Jigsaw Project). It is used to define a module, which is a self-contained unit of code that:
