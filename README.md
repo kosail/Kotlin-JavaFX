@@ -2,6 +2,7 @@
 <hr>
 Last update: Feb, 8. 2025
 
+---
 ## Steps to run setup JavaFX on Intellij
 This steps are not only for Kotlin, but also for Java. In general, we have to follow these 4 simple steps:
 1. You first have to add the JavaFX SDK (which you can download from [the official website](https://openjfx.io/)) and place it somewhere you don't gonna delete it by accident.
@@ -20,7 +21,7 @@ Almost done! You are now able to run the `Main.kt` file which is a simple `Ancho
 
 ## Common questions
 (At least questions that I made to myself while suffering to configure all this without knowing anything)
-
+---
 ### Why do I need that `module-info.java` file?
 The `module` keyword you find within this file, was introduced in Java 9 as part of the Java Module System (Jigsaw Project). It is used to define a module, which is a self-contained unit of code that:
 
@@ -30,14 +31,13 @@ The `module` keyword you find within this file, was introduced in Java 9 as part
 
 Since JavaFX is no longer bundled with the JDK, it is structured as a set of modular JARs (`javafx.base`, `javafx.controls`, etc.). If you use JavaFX in a modular application, you must explicitly declare dependencies in `module-info.java`. Otherwise, you'll get errors like `javafx.* package not found`.
 
-
-
+---
 ### Can `module-info.java` be Written in Kotlin?
 No. The Java Module System is part of Java itself, and there is no Kotlin equivalent syntax. You must write `module-info.java` in Java.
 
 However, your Kotlin code will still respect and follow the module system rules defined in module-info.java.
 
-
+---
 ### Is it possible to just don't have a `module-info.java` file? Like in a Non-Modular JavaFX + Kotlin
 TDLR: Yes, but is not recommended. For a modern JavaFX project in Kotlin (or Java), it's best to use the module system (module-info.java). While Kotlin itself doesn’t have a module keyword, it fully supports Java modules through Java interop.
 
